@@ -80,7 +80,6 @@ module Unifi
       return @http if defined?(@http)
 
       http = Net::HTTP.new(endpoint.host, endpoint.port)
-      http.ssl_version = :SSLv3
       http.use_ssl     = true if endpoint.is_a?(URI::HTTPS)
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
